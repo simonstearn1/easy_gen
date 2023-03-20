@@ -1,3 +1,9 @@
 class <%= class_name %>Service < ApplicationService
 
+  def initialize
+  end
+
+  def call
+  end
+
 end

@@ -1,4 +1,8 @@
+require 'rails/generators'
 require 'fileutils'
+
+template_dir = File.expand_path('templates', __dir__)
+puts "Templates in: #{template_dir}"
 
 class ServiceGenerator < Rails::Generators::NamedBase
   # bundle exec rails g service MyService
@@ -16,9 +20,19 @@ class ServiceGenerator < Rails::Generators::NamedBase
     template "service.rb", "app/services/#{file_path}_service.rb"
     template "service_test.rb", "test/services/#{file_path}_service_test.rb"
 
-    if Dir["./app/services/*"].length == 1 && File.exist?("app/services/application_service.rb") && Dir["./test/services/*"].length == 0
-      FileUtils.rm_rf(Rails.root.join('test','services'))
-      FileUtils.rm_rf(Rails.root.join('app','services'))
+    if no_services?
+      teardown 'app'
+      teardown 'test'
     end
+  end
+
+  private
+
+  def no_services?
+    Dir["./app/services/*"].length == 1 && File.exist?("app/services/application_service.rb") && Dir["./test/services/*"].length == 0
+  end
+
+  def teardown(location)
+    FileUtils.rm_rf(Rails.root.join(location,'services'))
   end
 end
