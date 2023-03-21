@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/easy_gen.svg)][gem]
+
 # easy_gen : Simple generator to add various classes with barebones minitest to rails projects
 
 Save typing when generating certain classes in somewhat standard patterns.
