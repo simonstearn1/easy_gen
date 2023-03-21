@@ -18,10 +18,10 @@ In the usual way.
 
 ## Using generators
 
-#Service Objects:
+#Service Objects (See this link for example usage: https://www.honeybadger.io/blog/refactor-ruby-rails-service-object/):
 
 ```sh
-bundle exec rails g service ServiceClassName
+bundle exec rails g service serviceclassname
 ```
 
 The command above:
@@ -42,9 +42,9 @@ The command above:
 
 - Creates '/app/domain' directory if it doesnt exist.
 - Installs new application domain class in '/app/domain' with the name 'ApplicationNull' in file '/app/domain/application_null.rb.'
-- Installs new domain class in '/app/domain' with the class name 'NullModelname' in the file /app/domain/null_modelname.rb.  This will inherit from /app/domain/application_null.rb.'
+- Installs new domain class in '/app/domain' with the class name 'ModelnameNull' in the file /app/domain/modelname_null.rb.  This will inherit from /app/domain/application_null.rb.'
 - Creates '/test/domain' directory if it doesnt exist.
-- Installs new test class in '/test/domain' with the name 'ServiceClassNameTest' in the file '/test/domain/null_modelname_test.rb'.
+- Installs new test class in '/test/domain' with the name 'ModelnameNullTest' in the file '/test/domain/modelname_null_test.rb'.
 
 
 ** Nothing clever - just saves a bit of typing
