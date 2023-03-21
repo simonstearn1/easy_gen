@@ -1,6 +1,6 @@
 # easy_gen : Simple generator to add various classes with barebones minitest to rails projects
 
-Save typing when generating service objects in a standard pattern.
+Save typing when generating certain classes in somewhat standard patterns.
 
 Add the following to the development group in your Gemfile:
 
