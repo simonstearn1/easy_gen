@@ -1,0 +1,35 @@
+class ApplicationNull
+
+  def id
+    raise "You are calling id on an object that doesn't exist."
+  end
+
+  def valid?
+    false
+  end
+
+  def present?
+    false
+  end
+
+  def blank?
+    true
+  end
+
+  def save
+    raise ActiveRecord::RecordInvalid
+  end
+
+  def save!
+    raise ActiveRecord::RecordInvalid
+  end
+
+  def update
+    raise ActiveRecord::RecordInvalid
+  end
+
+  def update!
+    raise ActiveRecord::RecordInvalid
+  end
+
+end

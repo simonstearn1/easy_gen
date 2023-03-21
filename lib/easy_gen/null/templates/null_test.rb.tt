@@ -1,0 +1,57 @@
+require "test_helper"
+
+class Null<%= class_name %>Test < ActiveSupport::TestCase
+  setup do
+    @null = Null<%= class_name %>.new
+  end
+
+  test 'id raises' do
+    assert_raises RuntimeError do
+      @null.id
+    end
+  end
+
+  test 'is invalid' do
+    refute @null.valid?
+  end
+
+  test 'is not present' do
+    refute @null.present?
+  end
+
+  test 'is blank' do
+    assert @null.blank?
+  end
+
+  test 'save raises' do
+    assert_raises ActiveRecord::RecordInvalid do
+      @null.save
+    end
+  end
+
+  test 'save! raises' do
+    assert_raises ActiveRecord::RecordInvalid do
+      @null.save!
+    end
+  end
+
+  test 'update raises' do
+    assert_raises ActiveRecord::RecordInvalid do
+      @null.update
+    end
+  end
+
+  test 'update! raises' do
+    assert_raises ActiveRecord::RecordInvalid do
+      @null.update!
+    end
+  end
+
+  # Generated fake attributes
+  <% clazz_columns.each do |column, ar_column|  %>
+  <%= "test '#{column} is #{default_value(ar_column.type)}' do" %>
+  <%= "  assert @null.#{column} == #{default_value(ar_column.type)}" %>
+  <%= "end" %>
+  <% end %>
+
+end

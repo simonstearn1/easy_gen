@@ -1,0 +1,10 @@
+class Null<%= class_name %> < ApplicationNull
+
+  # Generated fake attributes
+  <% clazz_columns.each do |column, ar_column|  %>
+  <%= "def #{column}" %>
+  <%= "  return #{default_value(ar_column.type)}" %>
+  <%= "end" %>
+  <% end %>
+
+end

@@ -13,15 +13,12 @@ module EasyGen
         @@generator_files << Dir["#{dir}/*_generator.rb"]
       end
       @@generator_files.flatten!
-      puts "#{@@generator_files}"
 
     end
 
     generators do
       @@generator_files.each do | file |
-        puts "requiring #{file}"
         require file
-        puts "Done require"
       end
     end
   end
