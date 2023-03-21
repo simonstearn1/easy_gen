@@ -1,4 +1,4 @@
-(https://badge.fury.io/rb/easy_gen.svg)
+[(https://badge.fury.io/rb/easy_gen.svg)]
 
 # easy_gen : Simple generator to add various classes with barebones minitest to rails projects
 
