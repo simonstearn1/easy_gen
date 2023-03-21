@@ -1,4 +1,4 @@
-class Null<%= class_name %> < ApplicationNull
+class <%= class_name %>Null < ApplicationNull
 
   # Generated fake attributes
   <% clazz_columns.each do |column, ar_column|  %>

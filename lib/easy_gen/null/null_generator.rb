@@ -4,11 +4,12 @@ require 'fileutils'
 template_dir = File.expand_path('templates', __dir__)
 
 class NullGenerator < Rails::Generators::NamedBase
+  include AbstractGenerator
   # bundle exec rails g null MyModel
   # bundle exec rails d null MyModel
-  #
 
   LOCATION = "domain"
+  TYPE = "null"
 
   AR_DEFAULTS = {integer: 0,
                  string: '"No Value"',
@@ -26,32 +27,11 @@ class NullGenerator < Rails::Generators::NamedBase
 
   argument :model, type: :string, default: "ERROR",  banner: "model"
 
-  def copy_templates
-    unless File.exist? "app/#{LOCATION}/application_service.rb"
-      template "application_null.rb", "app/#{LOCATION}/application_null.rb"
-    end
-    template "null.rb", "app/#{LOCATION}/null_#{file_path}.rb"
-    template "null_test.rb", "test/#{LOCATION}/null_#{file_path}_test.rb"
-
-    if no_files?
-      teardown ['app', 'test']
-    end
+  def main
+    copy_templates
   end
 
   private
-
-  def no_files?
-    Dir["./app/#{LOCATION}/*"].length == 1 && File.exist?("app/#{LOCATION}/application_null.rb") && Dir["./test/#{LOCATION}/*"].length == 0
-  end
-
-  def teardown(places)
-    print "Removing:"
-    places.each do | location |
-      print location + " "
-      FileUtils.rm_rf(Rails.root.join(location,"#{LOCATION}"))
-    end
-    puts "."
-  end
 
   def model_name
     model == "ERROR" ? class_name : model
