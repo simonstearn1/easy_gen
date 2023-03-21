@@ -20,7 +20,7 @@ In the usual way.
 
 ## Using generators
 
-###Service Object Classes 
+### Service Object Classes
 (See this link for example usage: https://www.honeybadger.io/blog/refactor-ruby-rails-service-object/):
 
 ```sh
@@ -35,7 +35,7 @@ The command above:
 - Creates '/test/services' directory if it doesnt exist.
 - Installs new test class in '/test/services' with the name 'ServiceClassNameTest' in the file '/test/services/service_class_name_test.rb'.
 
-###Null Object Classes
+### Null Object Classes
 (See this link for typical usage: https://medium.com/@kelseydh/using-the-null-object-pattern-with-ruby-on-rails-b645ebf79785 ):
 
 ```sh
@@ -50,7 +50,7 @@ The command above:
 - Creates '/test/domain' directory if it doesnt exist.
 - Installs new test class in '/test/domain' with the name 'ModelnameNullTest' in the file '/test/domain/modelname_null_test.rb'.
 
-###Decorator Classes
+### Decorator Classes
 (See this link for typical usage: https://www.thegreatcodeadventure.com/rails-refactoring-part-iii-the-decorator-pattern/)
 
 ```sh
