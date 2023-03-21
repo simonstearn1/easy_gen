@@ -1,0 +1,8 @@
+require "test_helper"
+
+class <%= class_name %>DecoratorTest < ActiveSupport::TestCase
+  setup do
+    @decorator = <%= class_name %>Decorator.new(<%= class_name%>.first)
+  end
+
+end

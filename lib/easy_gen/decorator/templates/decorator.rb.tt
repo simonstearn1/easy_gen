@@ -1,0 +1,6 @@
+class <%= class_name %>Decorator < ApplicationDecorator
+
+  # Expects to be created from <%= class_name %> like this:
+  # <%= class_name %>Decorator.new(@my_<%= class_name.downcase %>)
+
+end

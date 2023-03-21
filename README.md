@@ -18,7 +18,7 @@ In the usual way.
 
 ## Using generators
 
-#Service Objects (See this link for example usage: https://www.honeybadger.io/blog/refactor-ruby-rails-service-object/):
+#Service Object Classes (See this link for example usage: https://www.honeybadger.io/blog/refactor-ruby-rails-service-object/):
 
 ```sh
 bundle exec rails g service serviceclassname
@@ -32,7 +32,7 @@ The command above:
 - Creates '/test/services' directory if it doesnt exist.
 - Installs new test class in '/test/services' with the name 'ServiceClassNameTest' in the file '/test/services/service_class_name_test.rb'.
 
-#Null Objects (See this link for typical usage https://medium.com/@kelseydh/using-the-null-object-pattern-with-ruby-on-rails-b645ebf79785 ):
+#Null Object Classes (See this link for typical usage: https://medium.com/@kelseydh/using-the-null-object-pattern-with-ruby-on-rails-b645ebf79785 ):
 
 ```sh
 bundle exec rails g null modelname
@@ -45,6 +45,21 @@ The command above:
 - Installs new domain class in '/app/domain' with the class name 'ModelnameNull' in the file /app/domain/modelname_null.rb.  This will inherit from /app/domain/application_null.rb.'
 - Creates '/test/domain' directory if it doesnt exist.
 - Installs new test class in '/test/domain' with the name 'ModelnameNullTest' in the file '/test/domain/modelname_null_test.rb'.
+
+#Decorator Classes (See this link for typical usage: https://www.thegreatcodeadventure.com/rails-refactoring-part-iii-the-decorator-pattern/)
+
+```sh
+bundle exec rails g decorator modelname
+```
+
+The command above:
+
+- Creates '/app/decorators' directory if it doesnt exist.
+- Installs new application decorator class in '/app/decorators' with the name 'ApplicationDecorator' in file '/app/decorators/application_decorator.rb.'.  This inherits from Rubys SimpleDelegator class.
+- Installs new decorators class in '/app/decorators' with the class name 'ModelnameDecorator' in the file /app/decorators/modelname_decorator.rb.  This will inherit from /app/decorators/application_decorator.rb.'
+- Creates '/test/decorators' directory if it doesnt exist.
+- Installs new test class in '/test/decorators' with the name 'ModelnameDecoratorTest' in the file '/test/decorators/modelname_decorator_test.rb'.
+
 
 
 ** Nothing clever - just saves a bit of typing
