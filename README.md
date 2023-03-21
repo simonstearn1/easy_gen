@@ -1,4 +1,4 @@
-# easy_gen : Simple generator to add service class and minitest to rails projects
+# easy_gen : Simple generator to add various classes with barebones minitest to rails projects
 
 Save typing when generating service objects in a standard pattern.
 
