@@ -28,10 +28,18 @@ class NullGenerator < Rails::Generators::NamedBase
   argument :model, type: :string, default: "ERROR",  banner: "model"
 
   def main
+    raise "No such model - please check naming" unless model_exists?
     copy_templates
   end
 
   private
+
+  def model_exists?
+    files = Dir[Rails.root + 'app/models/*.rb']
+    models = files.map{ |m| File.basename(m, '.rb').camelize }
+
+    models.include? model_name.camelize
+  end
 
   def model_name
     model == "ERROR" ? class_name : model
