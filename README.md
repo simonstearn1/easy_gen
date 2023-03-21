@@ -50,7 +50,7 @@ The command above:
 - Installs new application domain class in '/app/domain' with the name 'ApplicationNull' in file '/app/domain/application_null.rb.'
 - Installs new domain class in '/app/domain' with the class name 'ModelnameNull' in the file /app/domain/modelname_null.rb.  This will inherit from /app/domain/application_null.rb.'
 - Creates '/test/domain' directory if it doesnt exist.
-- Installs new test class in '/test/domain' with the name 'ModelnameNullTest' in the file '/test/domain/modelname_null_test.rb'.
+- Installs new test class in '/test/domain' with the name 'ModelnameNullTest' in the file '/test/domain/modelname_null_test.rb'. Tests include 'stubbing' of all model 'columns' based on data type, with assertions (coverage baby).
 
 ### Decorator Classes
 (See this link for typical usage: https://www.thegreatcodeadventure.com/rails-refactoring-part-iii-the-decorator-pattern/)
