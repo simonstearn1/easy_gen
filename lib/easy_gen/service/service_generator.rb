@@ -14,6 +14,8 @@ class ServiceGenerator < Rails::Generators::NamedBase
 
   source_root File.expand_path("templates", __dir__)
 
+  class_option :module, type: :string
+
   def main
     copy_templates
   end

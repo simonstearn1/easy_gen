@@ -1,8 +1,8 @@
 require "test_helper"
 
-class <%= class_name %>NullTest < ActiveSupport::TestCase
+class <%= module_prefix %><%= class_name %>NullTest < ActiveSupport::TestCase
   setup do
-    @null = <%= class_name %>Null.new
+    @null = <%= module_prefix %><%= class_name %>Null.new
   end
 
   test 'id raises' do

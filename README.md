@@ -37,6 +37,18 @@ The command above:
 - Creates '/test/services' directory if it doesnt exist.
 - Installs new test class in '/test/services' with the name 'ServiceClassNameTest' in the file '/test/services/service_class_name_test.rb'.
 
+optionally run with the module option to embed within a module namespace.  For example:
+
+```sh
+bundle exec rails g service serviceclassname --module cool
+```
+
+- Creates '/app/services/cool' directory if it doesnt exist.
+- Installs new application service class in '/app/services' with the name 'ApplicationService' in file '/app/services/application_service.rb.'
+- Installs new service class in '/app/services/cool' with the class name 'Cool::ServiceClassName' in the file /app/services/cool/service_class_name.rb.  This will inherit from /app/services/application_services.rb.'
+- Creates '/test/services/cool' directory if it doesnt exist.
+- Installs new test class in '/test/services/cool' with the name 'ServiceClassNameTest' in the file '/test/services/cool/service_class_name_test.rb'.
+
 ### Null Object Classes
 (See this link for typical usage: https://medium.com/@kelseydh/using-the-null-object-pattern-with-ruby-on-rails-b645ebf79785 ):
 
@@ -51,6 +63,8 @@ The command above:
 - Installs new domain class in '/app/domain' with the class name 'ModelnameNull' in the file /app/domain/modelname_null.rb.  This will inherit from /app/domain/application_null.rb.'
 - Creates '/test/domain' directory if it doesnt exist.
 - Installs new test class in '/test/domain' with the name 'ModelnameNullTest' in the file '/test/domain/modelname_null_test.rb'. Tests include 'stubbing' of all model 'columns' based on data type, with assertions (coverage baby).
+
+Module option is also supported.
 
 ### Decorator Classes
 (See this link for typical usage: https://www.thegreatcodeadventure.com/rails-refactoring-part-iii-the-decorator-pattern/)
@@ -68,6 +82,7 @@ The command above:
 - Installs new test class in '/test/decorators' with the name 'ModelnameDecoratorTest' in the file '/test/decorators/modelname_decorator_test.rb'.
 
 
+Module option is also supported.
 
 ## Summary
 ** Nothing clever - just saves a bit of typing

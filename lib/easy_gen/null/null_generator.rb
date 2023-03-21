@@ -26,6 +26,7 @@ class NullGenerator < Rails::Generators::NamedBase
   source_root File.expand_path("templates", __dir__)
 
   argument :model, type: :string, default: "ERROR",  banner: "model"
+  class_option :module, type: :string
 
   def main
     raise "No such model - please check naming" unless model_exists?

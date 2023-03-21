@@ -1,4 +1,4 @@
-class <%= class_name %>Service < ApplicationService
+class <%= module_prefix %><%= class_name %>Service < ApplicationService
 
   def initialize
   end
