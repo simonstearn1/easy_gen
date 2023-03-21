@@ -2,6 +2,8 @@
 
 Save typing when generating certain classes in somewhat standard patterns.
 
+## Installation
+
 Add the following to the development group in your Gemfile:
 
 ```ruby
@@ -18,7 +20,8 @@ In the usual way.
 
 ## Using generators
 
-#Service Object Classes (See this link for example usage: https://www.honeybadger.io/blog/refactor-ruby-rails-service-object/):
+###Service Object Classes 
+(See this link for example usage: https://www.honeybadger.io/blog/refactor-ruby-rails-service-object/):
 
 ```sh
 bundle exec rails g service serviceclassname
@@ -32,7 +35,8 @@ The command above:
 - Creates '/test/services' directory if it doesnt exist.
 - Installs new test class in '/test/services' with the name 'ServiceClassNameTest' in the file '/test/services/service_class_name_test.rb'.
 
-#Null Object Classes (See this link for typical usage: https://medium.com/@kelseydh/using-the-null-object-pattern-with-ruby-on-rails-b645ebf79785 ):
+###Null Object Classes
+(See this link for typical usage: https://medium.com/@kelseydh/using-the-null-object-pattern-with-ruby-on-rails-b645ebf79785 ):
 
 ```sh
 bundle exec rails g null modelname
@@ -46,7 +50,8 @@ The command above:
 - Creates '/test/domain' directory if it doesnt exist.
 - Installs new test class in '/test/domain' with the name 'ModelnameNullTest' in the file '/test/domain/modelname_null_test.rb'.
 
-#Decorator Classes (See this link for typical usage: https://www.thegreatcodeadventure.com/rails-refactoring-part-iii-the-decorator-pattern/)
+###Decorator Classes
+(See this link for typical usage: https://www.thegreatcodeadventure.com/rails-refactoring-part-iii-the-decorator-pattern/)
 
 ```sh
 bundle exec rails g decorator modelname
@@ -62,4 +67,5 @@ The command above:
 
 
 
+## Summary
 ** Nothing clever - just saves a bit of typing
