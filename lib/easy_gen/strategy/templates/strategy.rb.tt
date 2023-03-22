@@ -1,0 +1,5 @@
+class <%= class_name %>::<%= @strategy %>Strategy < <%= @parent_strategy.blank? ? "Application" : "#{@parent_strategy}::#{@parent_strategy}" %>Strategy
+  def call(data)
+    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
+  end
+end

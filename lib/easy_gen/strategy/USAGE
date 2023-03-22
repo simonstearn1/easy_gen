@@ -1,0 +1,14 @@
+Description:
+  Lays out a new service object under /app/decorators, with a test file under /test/decorators.
+  The service class will inherit from /app/decorators/application_decorator class which will be created.
+  if you use the generator to delete decorator classes, these will be removed together with directories once
+  the count of non abstract classes == 0.
+
+Example:
+    `rails generate decorator Mydecorator`
+
+    This will create:
+        app/decorators/application_decorator.rb
+        app/decorators/my_decorator.rb
+        test/decorators/my_decorator_test.rb
+

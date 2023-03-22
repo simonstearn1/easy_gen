@@ -1,0 +1,11 @@
+require "test_helper"
+
+class <%= class_name %>ContextTest < ActiveSupport::TestCase
+  setup do
+    @context = <%= class_name %>::Context.new()
+  <% strategies.each do | strategy | %>
+    @<%= strategy %>_strategy = <%= class_name.camelize %>::<%= strategy.camelize %>Strategy.new()
+  <% end %>
+  end
+
+end

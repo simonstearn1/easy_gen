@@ -1,0 +1,14 @@
+require "test_helper"
+
+class <%= class_name.camelize %><%= @strategy %>StrategyTest < ActiveSupport::TestCase
+  setup do
+    @strategy = <%= class_name %>::<%= @strategy.camelize %>Strategy.new()
+  end
+
+  test 'Raises <%= class_name.camelize %><%= @strategy %> not implemented' do
+    assert_raises NotImplementedError do
+      @strategy.call(0)
+    end
+  end
+
+end
