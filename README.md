@@ -22,7 +22,7 @@ In the usual way.
 
 ## Using generators
 
-### Service Object Classes
+### Service Classes
 (See this link for example usage: https://www.honeybadger.io/blog/refactor-ruby-rails-service-object/):
 
 ```sh
@@ -48,6 +48,23 @@ bundle exec rails g service serviceclassname --module cool
 - Installs new service class in '/app/services/cool' with the class name 'Cool::ServiceClassName' in the file /app/services/cool/service_class_name.rb.  This will inherit from /app/services/application_services.rb.'
 - Creates '/test/services/cool' directory if it doesnt exist.
 - Installs new test class in '/test/services/cool' with the name 'ServiceClassNameTest' in the file '/test/services/cool/service_class_name_test.rb'.
+
+### Validator Classes
+(See this link for example usage: https://womanonrails.com/custom-rails-validators ):
+
+```sh
+bundle exec rails g validator target
+```
+
+The command above:
+
+- Creates '/app/validators' directory if it doesnt exist.
+- Installs new application validator class in '/app/validator' with the name 'ApplicationValidator' in file '/app/services/application_validator.rb.' which inherits from ActiveModel::EachValidator.
+- Installs new validator class in '/app/validators' with the class name 'TargetValidator' in the file /app/validators/target_validator.rb.  This will inherit from /app/services/application_validator.rb.'
+- Creates '/test/validators' directory if it doesnt exist.
+- Installs new test class in '/test/validators' with the name 'TargetValidatorTest' in the file '/test/validators/target_validator_test.rb'.
+
+Yeah I know there are other types of validators - pull requests gratefully received.  I have only ever used EachValidators, and them many times..
 
 ### Null Object Classes
 (See this link for typical usage: https://medium.com/@kelseydh/using-the-null-object-pattern-with-ruby-on-rails-b645ebf79785 ):

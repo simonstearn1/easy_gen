@@ -1,0 +1,23 @@
+require "test_helper"
+
+
+class <%= class_name %>Validatable
+  include ActiveModel::Validations
+  attr_accessor  :<%= class_name.downcase %>
+
+  validates :<%= class_name.downcase %>, <%= class_name.downcase %>: true
+
+end
+
+
+class <%= class_name %>ValidatorTest < ActiveSupport::TestCase
+  setup do
+    @testable = <%= class_name %>Validatable.new
+  end
+
+  test 'Confirms there is a value' do
+    @testable.<%= class_name.downcase %> = 1
+    assert @testable.valid?
+  end
+
+end

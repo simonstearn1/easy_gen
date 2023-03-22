@@ -1,0 +1,11 @@
+class <%= class_name %>Validator < ApplicationValidator
+
+  def validate_each(record, attribute, value)
+    return false if value.blank?
+    return true
+  end
+
+
+  private
+
+end
