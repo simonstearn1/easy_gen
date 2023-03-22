@@ -1,7 +1,7 @@
 require 'rails/generators'
 require 'fileutils'
 
-module AbstractGenerator
+module EasyGenGenerator
 
   def copy_templates
     unless File.exist? "app/#{base_location}/application_#{generator_type}.rb"

@@ -4,7 +4,7 @@ require 'fileutils'
 template_dir = File.expand_path('templates', __dir__)
 
 class DecoratorGenerator < Rails::Generators::NamedBase
-  include AbstractGenerator
+  include EasyGenGenerator
 
   # bundle exec rails g service MyService
   # bundle exec rails d service MyService

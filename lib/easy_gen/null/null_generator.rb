@@ -4,7 +4,7 @@ require 'fileutils'
 template_dir = File.expand_path('templates', __dir__)
 
 class NullGenerator < Rails::Generators::NamedBase
-  include AbstractGenerator
+  include EasyGenGenerator
   # bundle exec rails g null MyModel
   # bundle exec rails d null MyModel
 
