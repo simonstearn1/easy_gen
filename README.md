@@ -84,5 +84,39 @@ The command above:
 
 Module option is also supported.
 
+### Strategy Classes
+(See this link for typical usage: https://refactoring.guru/design-patterns/strategy/ruby/example)
+
+```sh
+bundle exec rails g strategy context strategy1 strategy2 ...
+```
+
+
+Example:
+
+```sh
+bundle exec rails g strategy fishing hook line net
+```
+
+The command above:
+
+- Creates '/app/strategies' directory if it doesnt exist.
+- Creates '/app/strategies/fishing' directory if it doesnt exist.
+- Installs new application context class in '/app/strategies' with the name 'ApplicationContext' in file '/app/strategies/application_context.rb.'.
+- Installs new application strategy class in '/app/strategies' with the name 'ApplicationStrategy' in file '/app/strategies/application_strategy.rb.'.
+- Installs new context module and class in '/app/strategies' with the class name 'Fishing::Context' in the file /app/strategies/fishing_context.rb.  This will inherit from /app/strategies/application_context.rb.'
+- Installs new strategy class in '/app/strategies/fishing' with the class name 'Fishing::FishingStrategy' in the file /app/strategies/fishing/fishing_strategy.rb.  This will inherit from /app/strategies/application_strategy.rb.'
+- Installs new strategy class in '/app/strategies/fishing' with the class name 'Fishing::HookStrategy' in the file /app/strategies/fishing/hook_strategy.rb.  This will inherit from /app/strategies/fishing/fishing_strategy.rb.'
+- Installs new strategy class in '/app/strategies/fishing' with the class name 'Fishing::LineStrategy' in the file /app/strategies/fishing/line_strategy.rb.  This will inherit from /app/strategies/fishing/fishing_strategy.rb.'
+- Installs new strategy class in '/app/strategies/fishing' with the class name 'Fishing::NetStrategy' in the file /app/strategies/fishing/net_strategy.rb.  This will inherit from /app/strategies/fishing/fishing_strategy.rb.'
+- Creates '/test/strategies' directory if it doesnt exist.
+- Creates '/test/strategies/fishing' directory if it doesnt exist.
+- Installs new test class in '/test/strategies' with the name 'FishingContext' in the file '/test/strategies/fishing_context_test.rb'.
+- Installs new test class in '/test/strategies/fishing' with the name 'FishingStrategy' in the file '/test/strategies/fishing_strategy_test.rb'.
+- Installs new test class in '/test/strategies/fishing' with the name 'HookStrategy' in the file '/test/strategies/hook_strategy_test.rb'.
+- Installs new test class in '/test/strategies/fishing' with the name 'LineStrategy' in the file '/test/strategies/line_strategy_test.rb'.
+- Installs new test class in '/test/strategies/fishing' with the name 'NetStrategy' in the file '/test/strategies/net_strategy_test.rb'.
+
+
 ## Summary
-** Nothing clever - just saves a bit of typing
+** Saves a bit of typing
