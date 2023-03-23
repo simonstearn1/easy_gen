@@ -39,5 +39,5 @@
 /scripts/run_byebug
 /tags
 /app
-/test
+/test/dummy
 *.gem
