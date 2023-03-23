@@ -78,8 +78,10 @@ module EasyGenGenerator
   end
 
   def teardown(places)
+    return if (places.blank? || location.blank? || Rails.root.blank?)
+    puts "places:#{places}."
     print "Removing directories: "
-    places.each do | place |
+    places&.each do | place |
       print place + '/' + location + " "
       FileUtils.rm_rf(Rails.root.join(place,"#{location}"))
     end
