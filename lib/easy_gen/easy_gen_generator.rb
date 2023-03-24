@@ -78,17 +78,17 @@ module EasyGenGenerator
   end
 
   def gem_testing?
-     Rails.root.blank?
+    Rails.root.blank?
   end
 
-  def root_path
-    gem_testing? ? Pathname.new("./dummy") : Rails.root
+  def application_root_path
+    gem_testing? ? Pathname.new("./") : Rails.root
   end
 
   def teardown(places)
     return if (places.blank? || location.blank?)
     places.each do | place |
-      FileUtils.rm_rf(root_path.join(place,"#{location}"))
+      FileUtils.rm_rf(application_root_path.join(place,"#{location}"))
     end
   end
 

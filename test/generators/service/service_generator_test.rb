@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'rails'
+require 'rails/all'
 require 'rails/generators'
 require 'rails/generators/named_base'
 require 'easy_gen'
@@ -11,6 +11,11 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
 
   tests ServiceGenerator
   destination File.expand_path("../../dummy", File.dirname(__FILE__))
+
+  def setup
+    Dir.chdir(dest_dir)
+  end
+
 
   test "it generates application & service porc  and test script in the right place" do
 
