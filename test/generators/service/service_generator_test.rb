@@ -31,5 +31,17 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
     end
   end
 
+  test "it tidies up destroyed files" do
+
+    easy_gen_ensure "#{dest_dir}/app/services/application_service.rb"
+    easy_gen_ensure "#{dest_dir}/app/services/service1_service.rb"
+    easy_gen_ensure "#{dest_dir}/test/services/service1_service_test.rb"
+
+    system "#{dest_dir}/bin/rails destroy service service1"
+
+    assert_no_file "#{dest_dir}/app/services/application_service.rb"
+    assert_no_file "#{dest_dir}/app/services/service1_service.rb"
+    assert_no_file "#{dest_dir}/test/services/service1_service_test.rb"
+  end
 
 end
