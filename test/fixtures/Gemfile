@@ -28,4 +28,5 @@ group :development do
   # gem "spring"
 end
 
+gem 'pry-byebug'
 gem 'easy_gen', path: '../../'

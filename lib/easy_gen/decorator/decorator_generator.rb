@@ -22,21 +22,4 @@ class DecoratorGenerator < Rails::Generators::NamedBase
     copy_templates
   end
 
-  private
-
-  def model_exists?
-    @files ||= Dir[model_path + '*.rb']
-    @models ||= @files.map{ |m| File.basename(m, '.rb').camelize }
-
-    @models.include? model_name.camelize
-  end
-
-  def model_path
-    Pathname(application_root_path.to_s + '/app/models/')
-  end
-
-  def model_name
-    model == "ERROR" ? class_name : model
-  end
-
 end

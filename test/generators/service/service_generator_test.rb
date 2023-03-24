@@ -13,7 +13,7 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
   destination File.expand_path("../../dummy", File.dirname(__FILE__))
 
   def setup
-    Dir.chdir(dest_dir)
+    set_dir
   end
 
 

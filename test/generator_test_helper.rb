@@ -11,4 +11,8 @@ module GeneratorTestHelper
     FileUtils.touch(abs_path) unless File.exist?(abs_path)
   end
 
+  def set_dir
+    Dir.chdir(dest_dir)
+  end
+
 end

@@ -1,3 +1,4 @@
+require 'rails/all'
 require 'rails/generators'
 require 'fileutils'
 
@@ -35,26 +36,18 @@ class NullGenerator < Rails::Generators::NamedBase
 
   private
 
-  def model_exists?
-    files = Dir[Rails.root + 'app/models/*.rb']
-    models = files.map{ |m| File.basename(m, '.rb').camelize }
 
-    models.include? model_name.camelize
-  end
-
-  def model_name
-    model == "ERROR" ? class_name : model
+  def clazz_columns
+    clazz.columns_hash.reject { | key, value | key == "id" }
   end
 
   def clazz
-    Kernel.const_get(model_name)
+    eg_debug "**** Model: #{model_name} - #{model_name.class} - #{model_name.method(:constantize).source_location} ****"
+
+    model_name.constantize
   end
 
   def default_value(ar_type)
     return AR_DEFAULTS[ar_type.to_sym]
-  end
-
-  def clazz_columns
-    clazz.columns_hash.reject { | key, value | key == "id" }
   end
 end
