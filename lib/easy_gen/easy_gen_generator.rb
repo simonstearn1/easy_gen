@@ -49,12 +49,15 @@ module EasyGenGenerator
     @generator_type ||= self.class::TYPE
   end
 
+  def abstract_base_classes
+    Object.const_defined?("#{self.class}::BASE_CLASSES") ? self.class::BASE_CLASSES : 1
+  end
   def no_files?
-    only_one_file? && file_is_abstract_class? && no_tests?
+    only_abstract_class_file? && file_is_abstract_class? && no_tests?
   end
 
-  def only_one_file?
-    Dir["./app/#{base_location}/**/*"].reject { | path | File.directory?(path) }.length == 1
+  def only_abstract_class_file?
+    Dir["./app/#{base_location}/**/*"].reject { | path | File.directory?(path) }.length == abstract_base_classes
   end
 
   def file_is_abstract_class?

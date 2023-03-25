@@ -11,6 +11,7 @@ class StrategyGenerator < Rails::Generators::NamedBase
 
   LOCATION = "strategies"
   TYPE = "strategy"
+  BASE_CLASSES = 2
 
   source_root File.expand_path("templates", __dir__)
   argument :strategies, type: :array, default: [], banner: "strategy strategy.."
