@@ -1,0 +1,3 @@
+class <%= module_prefix %><%= class_name %>Serializer < ApplicationSerializer
+
+end

@@ -1,0 +1,22 @@
+# Or consider this..
+# $ bundle add jserializer
+#
+#class ApplicationSerializer < Jserializer::Base
+#  attributes :data
+#
+#  def some_value
+#    object.some_value.somewhere
+#  end
+#end
+
+# dumb coder..
+class ApplicationSerializer
+
+  def load(data)
+    @data = data || {}
+  end
+
+  def dump
+    @data || {}
+  end
+end

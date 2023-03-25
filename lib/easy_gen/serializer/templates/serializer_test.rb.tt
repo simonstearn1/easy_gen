@@ -1,0 +1,32 @@
+require "test_helper"
+
+class <%= module_prefix %><%= class_name %>SerlializerTest < ActiveSupport::TestCase
+  setup do
+    @serializer = <%= module_prefix %><%= class_name %>Serializer.new
+    @data = "The data"
+  end
+
+  test 'it is empty on initialization' do
+    assert <%= module_prefix %><%= class_name %>Serializer.new.dump == {}
+  end
+
+  test 'it loads data' do
+    assert @serializer.load(@data)
+  end
+
+  test 'it dumps data' do
+    assert_not_nil @serializer.dump
+  end
+
+  test 'it maintains original data' do
+    @serializer.load(@data)
+    assert_equal @serializer.dump, @data
+  end
+
+  test 'it replaces data' do
+    assert @serializer.load("Rubbish")
+    assert_equal @serializer.dump, "Rubbish"
+  end
+
+end
+

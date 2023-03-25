@@ -1,0 +1,14 @@
+Description:
+  Lays out a new serializers object under /app/serializers, with a test file under /test/serializers.
+  The null value class will inherit from /app/serializers/application_serializer.rb class which will be created.
+  if you use the generator to delete null classes, these will be removed together with directories once
+  the count of non abstract classes == 0.
+
+Example:
+    `rails generate serializer MySerializer`
+
+    This will create:
+        app/serializers/application_serializer.rb
+        app/serializers/my_serializer.rb
+        test/serializers/my_serializer_test.rb
+
