@@ -134,6 +134,24 @@ The command above:
 - Installs new test class in '/test/strategies/fishing' with the name 'LineStrategy' in the file '/test/strategies/line_strategy_test.rb'.
 - Installs new test class in '/test/strategies/fishing' with the name 'NetStrategy' in the file '/test/strategies/net_strategy_test.rb'.
 
+### Serializer Classes
+If you want to do something other than standard JSON serialization...
+
+```sh
+bundle exec rails g serializer basic
+```
+
+The command above:
+
+- Creates '/app/serializers' directory if it doesnt exist.
+- Installs new application serializer class in '/app/serializers' with the name 'ApplicationSerializer' in file '/app/decorators/application_serializer.rb.'.
+- Installs new serializer class in '/app/serializer' with the class name 'BasicSerializer' in the file /app/decorators/basic_seralizer.rb.  This will inherit from /app/decorators/application_serializer.rb.'
+- Creates '/test/serializers' directory if it doesnt exist.
+- Installs new test class in '/test/serializers' with the name 'BasicSerializerTest' in the file '/test/decorators/basic_serializer_test.rb'.
+
+
+Module option is also supported.
+
 
 ## Summary
 ** Saves a bit of typing
