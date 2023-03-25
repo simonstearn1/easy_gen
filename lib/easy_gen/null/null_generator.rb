@@ -42,8 +42,6 @@ class NullGenerator < Rails::Generators::NamedBase
   end
 
   def clazz
-    eg_debug "**** Model: #{model_name} - #{model_name.class} - #{model_name.method(:constantize).source_location} ****"
-
     model_name.constantize
   end
 
