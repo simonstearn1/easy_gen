@@ -9,7 +9,7 @@ Save typing when generating certain classes in somewhat standard patterns.
 Add the following to the development group in your Gemfile:
 
 ```ruby
-gem "easy_gen"
+gem "easy_gen", group: :development
 ```
 
 Then run

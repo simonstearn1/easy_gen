@@ -52,6 +52,7 @@ module EasyGenGenerator
   def abstract_base_class_count
     Object.const_defined?("#{self.class}::BASE_CLASSES") ? self.class::BASE_CLASSES : 1
   end
+
   def no_files?
     count_of_files_indicates_empty? && files_are_abstract_class? && no_tests?
   end
