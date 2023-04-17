@@ -18,7 +18,6 @@ class DecoratorGenerator < Rails::Generators::NamedBase
   class_option :module, type: :string
 
   def main
-    raise "No such model - #{model_name} - in #{model_path} (#{Dir.pwd})- please check naming" unless model_exists?
     copy_templates
   end
 
